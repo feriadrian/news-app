@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/ui/home/screen/home_page.dart';
+import 'package:news_app/features/home/screen/home_page.dart';
+import 'dependency_injection.dart';
 
 void main() async {
+  await setup();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }

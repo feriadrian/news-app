@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/bloc/home_bloc/home_bloc.dart';
+
+import '../home_bloc/home_bloc.dart';
 
 class SeacrhWidget extends StatelessWidget {
   SeacrhWidget({
@@ -16,9 +17,6 @@ class SeacrhWidget extends StatelessWidget {
         key: formKey,
         child: TextFormField(
           controller: textController,
-          // onChanged: (value) async{
-          //   Future.delayed()
-          // },
           validator: (value) {
             if (value!.isEmpty) {
               return 'Field ini harus diisi';

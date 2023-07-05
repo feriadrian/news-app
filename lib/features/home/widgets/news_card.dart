@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/bloc/home_bloc/home_bloc.dart';
-import 'package:news_app/ui/news/news_page.dart';
+import 'package:news_app/features/news/news_page.dart';
 
+import '../home_bloc/home_bloc.dart';
 import 'news_item.dart';
 // import 'package:intl/intl.dart';
 

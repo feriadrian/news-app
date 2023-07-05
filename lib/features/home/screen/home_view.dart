@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/ui/home/widgets/news_card.dart';
+import 'package:news_app/features/home/widgets/news_card.dart';
 
 import '../widgets/search_widget.dart';
 
