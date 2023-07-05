@@ -1,11 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:news_app/core/error/failures.dart';
-import 'package:news_app/data/datasources/news_remote_data_source.dart';
 import 'package:news_app/domain/usecase/news_usacese/get_news.dart';
 
 import '../../../data/models/news/news_model.dart';
-import '../../../domain/repository/news_repository/news_repository.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

@@ -9,13 +9,13 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(super.message);
+  const ServerFailure(super.message);
 }
 
 class ConnectionFailure extends Failure {
-  ConnectionFailure(super.message);
+  const ConnectionFailure(super.message);
 }
 
 class ParsingFailure extends Failure {
-  ParsingFailure(super.message);
+  const ParsingFailure(super.message);
 }

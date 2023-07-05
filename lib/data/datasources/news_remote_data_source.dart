@@ -33,9 +33,9 @@ class NewsRemoteDataSourceImpl implements NewsRemoteDataSource {
         }
         return Right(newsModels);
       }
-      return Left(ConnectionFailure('Mohon Periksa Jaringan Anda'));
+      return const Left(ConnectionFailure('Mohon Periksa Jaringan Anda'));
     } on DioException {
-      return Left(ParsingFailure('Kesalahan dalam parsing data'));
+      return const Left(ParsingFailure('Kesalahan dalam parsing data'));
     } catch (e) {
       rethrow;
     }

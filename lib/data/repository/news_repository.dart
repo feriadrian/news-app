@@ -24,9 +24,9 @@ class NewsRepositoryImpl extends NewsRepository {
             await newsRemoteDataSource.getNews(search: search, page: page);
         return remoteNews;
       } on ServerException {
-        return Left(ServerFailure('terjadi Kesalahan pada server'));
+        return const Left(ServerFailure('terjadi Kesalahan pada server'));
       }
     }
-    return Left(ConnectionFailure('Mohon Periksa Jaringan Anda'));
+    return const Left(ConnectionFailure('Mohon Periksa Jaringan Anda'));
   }
 }

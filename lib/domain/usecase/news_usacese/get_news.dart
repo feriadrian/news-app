@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:news_app/core/error/failures.dart';
 import 'package:news_app/core/usecase/usecase.dart';
-import 'package:news_app/data/repository/news_repository.dart';
 
 import '../../../data/models/news/news_model.dart';
 import '../../repository/news_repository/news_repository.dart';

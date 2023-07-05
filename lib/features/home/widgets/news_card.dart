@@ -32,7 +32,7 @@ class NewsCard extends StatelessWidget {
         if (state is HomeLoadedState) {
           if (state.listnews.isNotEmpty) {
             return ListView.builder(
-              physics: AlwaysScrollableScrollPhysics(
+              physics: const AlwaysScrollableScrollPhysics(
                   parent: BouncingScrollPhysics()),
               itemCount: state.listnews.length,
               itemBuilder: (context, index) {

@@ -26,10 +26,7 @@ class SeacrhWidget extends StatelessWidget {
           decoration: InputDecoration(
             suffixIcon: GestureDetector(
                 onTap: () {
-                  print('=====onTap=======');
-                  print(textController.text);
                   if (formKey.currentState!.validate()) {
-                    print(textController.text);
                     context.read<HomeBloc>().add(
                         HomeEvent.onGetDataFromServer(textController.text));
                   }

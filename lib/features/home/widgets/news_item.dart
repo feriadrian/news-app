@@ -34,16 +34,16 @@ class NewsItem extends StatelessWidget {
                       width: double.infinity,
                       height: heightSize * 1 / 8,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(8),
                               topRight: Radius.circular(8)),
                           image: DecorationImage(
                               image: NetworkImage(model.urlToImage),
                               fit: BoxFit.fill)),
                     )
-                  : SizedBox(),
+                  : const SizedBox(),
               Text(model.title),
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
               Text('Publish At $formattedDate')
