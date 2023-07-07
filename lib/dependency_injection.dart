@@ -8,18 +8,21 @@ import 'package:news_app/features/home/home_bloc/home_bloc.dart';
 
 import 'domain/repository/news_repository/news_repository.dart';
 
-final sl = GetIt.instance;
+final serviceLocator = GetIt.instance;
 Future<void> setup() async {
   await initNews();
+  serviceLocator.registerFactory(() => Connectivity());
+  serviceLocator
+      .registerFactory<NetworkInfo>(() => NetworkInfoImpl(serviceLocator()));
 }
 
 Future<void> initNews() async {
-  sl.registerFactory(() => Connectivity());
-  sl.registerFactory<HomeBloc>(() => HomeBloc(getNews: sl()));
-  sl.registerLazySingleton<GetNews>(() => GetNews(newsRepository: sl()));
-  sl.registerLazySingleton<NewsRemoteDataSource>(
+  serviceLocator
+      .registerFactory<HomeBloc>(() => HomeBloc(getNews: serviceLocator()));
+  serviceLocator.registerLazySingleton<NewsUsecase>(
+      () => NewsUsecase(newsRepository: serviceLocator()));
+  serviceLocator.registerLazySingleton<NewsRemoteDataSource>(
       () => NewsRemoteDataSourceImpl());
-  sl.registerLazySingleton<NewsRepository>(
-      () => NewsRepositoryImpl(newsRemoteDataSource: sl(), newworkInfo: sl()));
-  sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
+  serviceLocator.registerLazySingleton<NewsRepository>(() => NewsRepositoryImpl(
+      newsRemoteDataSource: serviceLocator(), newworkInfo: serviceLocator()));
 }

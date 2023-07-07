@@ -24,7 +24,7 @@ mixin _$NewsModel {
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  String get urlToImage => throw _privateConstructorUsedError;
+  String? get urlToImage => throw _privateConstructorUsedError;
   String get publishedAt => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   Source? get source => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $NewsModelCopyWith<$Res> {
       String title,
       String description,
       String url,
-      String urlToImage,
+      String? urlToImage,
       String publishedAt,
       String content,
       Source? source});
@@ -70,7 +70,7 @@ class _$NewsModelCopyWithImpl<$Res, $Val extends NewsModel>
     Object? title = null,
     Object? description = null,
     Object? url = null,
-    Object? urlToImage = null,
+    Object? urlToImage = freezed,
     Object? publishedAt = null,
     Object? content = null,
     Object? source = freezed,
@@ -92,10 +92,10 @@ class _$NewsModelCopyWithImpl<$Res, $Val extends NewsModel>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      urlToImage: null == urlToImage
+      urlToImage: freezed == urlToImage
           ? _value.urlToImage
           : urlToImage // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedAt: null == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ abstract class _$$_NewsModelCopyWith<$Res> implements $NewsModelCopyWith<$Res> {
       String title,
       String description,
       String url,
-      String urlToImage,
+      String? urlToImage,
       String publishedAt,
       String content,
       Source? source});
@@ -160,7 +160,7 @@ class __$$_NewsModelCopyWithImpl<$Res>
     Object? title = null,
     Object? description = null,
     Object? url = null,
-    Object? urlToImage = null,
+    Object? urlToImage = freezed,
     Object? publishedAt = null,
     Object? content = null,
     Object? source = freezed,
@@ -182,10 +182,10 @@ class __$$_NewsModelCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      urlToImage: null == urlToImage
+      urlToImage: freezed == urlToImage
           ? _value.urlToImage
           : urlToImage // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedAt: null == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
@@ -210,7 +210,7 @@ class _$_NewsModel implements _NewsModel {
       this.title = '-',
       this.description = '-',
       this.url = '-',
-      this.urlToImage = '-',
+      this.urlToImage,
       this.publishedAt = '-',
       this.content = '-',
       this.source});
@@ -231,8 +231,7 @@ class _$_NewsModel implements _NewsModel {
   @JsonKey()
   final String url;
   @override
-  @JsonKey()
-  final String urlToImage;
+  final String? urlToImage;
   @override
   @JsonKey()
   final String publishedAt;
@@ -290,7 +289,7 @@ abstract class _NewsModel implements NewsModel {
       final String title,
       final String description,
       final String url,
-      final String urlToImage,
+      final String? urlToImage,
       final String publishedAt,
       final String content,
       final Source? source}) = _$_NewsModel;
@@ -307,7 +306,7 @@ abstract class _NewsModel implements NewsModel {
   @override
   String get url;
   @override
-  String get urlToImage;
+  String? get urlToImage;
   @override
   String get publishedAt;
   @override

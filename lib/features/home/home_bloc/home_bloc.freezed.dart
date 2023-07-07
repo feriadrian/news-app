@@ -17,19 +17,20 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeEvent {
   String get seacrh => throw _privateConstructorUsedError;
+  String get sortBy => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String seacrh) onGetDataFromServer,
+    required TResult Function(String seacrh, String sortBy) onGetDataFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String seacrh)? onGetDataFromServer,
+    TResult? Function(String seacrh, String sortBy)? onGetDataFromServer,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String seacrh)? onGetDataFromServer,
+    TResult Function(String seacrh, String sortBy)? onGetDataFromServer,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,7 +61,7 @@ abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res, HomeEvent>;
   @useResult
-  $Res call({String seacrh});
+  $Res call({String seacrh, String sortBy});
 }
 
 /// @nodoc
@@ -77,11 +78,16 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
   @override
   $Res call({
     Object? seacrh = null,
+    Object? sortBy = null,
   }) {
     return _then(_value.copyWith(
       seacrh: null == seacrh
           ? _value.seacrh
           : seacrh // ignore: cast_nullable_to_non_nullable
+              as String,
+      sortBy: null == sortBy
+          ? _value.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -95,7 +101,7 @@ abstract class _$$OnGetDataFromServerCopyWith<$Res>
       __$$OnGetDataFromServerCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String seacrh});
+  $Res call({String seacrh, String sortBy});
 }
 
 /// @nodoc
@@ -110,11 +116,16 @@ class __$$OnGetDataFromServerCopyWithImpl<$Res>
   @override
   $Res call({
     Object? seacrh = null,
+    Object? sortBy = null,
   }) {
     return _then(_$OnGetDataFromServer(
-      null == seacrh
+      seacrh: null == seacrh
           ? _value.seacrh
           : seacrh // ignore: cast_nullable_to_non_nullable
+              as String,
+      sortBy: null == sortBy
+          ? _value.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -123,14 +134,16 @@ class __$$OnGetDataFromServerCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnGetDataFromServer implements OnGetDataFromServer {
-  const _$OnGetDataFromServer(this.seacrh);
+  const _$OnGetDataFromServer({required this.seacrh, required this.sortBy});
 
   @override
   final String seacrh;
+  @override
+  final String sortBy;
 
   @override
   String toString() {
-    return 'HomeEvent.onGetDataFromServer(seacrh: $seacrh)';
+    return 'HomeEvent.onGetDataFromServer(seacrh: $seacrh, sortBy: $sortBy)';
   }
 
   @override
@@ -138,11 +151,12 @@ class _$OnGetDataFromServer implements OnGetDataFromServer {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnGetDataFromServer &&
-            (identical(other.seacrh, seacrh) || other.seacrh == seacrh));
+            (identical(other.seacrh, seacrh) || other.seacrh == seacrh) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, seacrh);
+  int get hashCode => Object.hash(runtimeType, seacrh, sortBy);
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +168,27 @@ class _$OnGetDataFromServer implements OnGetDataFromServer {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String seacrh) onGetDataFromServer,
+    required TResult Function(String seacrh, String sortBy) onGetDataFromServer,
   }) {
-    return onGetDataFromServer(seacrh);
+    return onGetDataFromServer(seacrh, sortBy);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String seacrh)? onGetDataFromServer,
+    TResult? Function(String seacrh, String sortBy)? onGetDataFromServer,
   }) {
-    return onGetDataFromServer?.call(seacrh);
+    return onGetDataFromServer?.call(seacrh, sortBy);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String seacrh)? onGetDataFromServer,
+    TResult Function(String seacrh, String sortBy)? onGetDataFromServer,
     required TResult orElse(),
   }) {
     if (onGetDataFromServer != null) {
-      return onGetDataFromServer(seacrh);
+      return onGetDataFromServer(seacrh, sortBy);
     }
     return orElse();
   }
@@ -209,11 +223,14 @@ class _$OnGetDataFromServer implements OnGetDataFromServer {
 }
 
 abstract class OnGetDataFromServer implements HomeEvent {
-  const factory OnGetDataFromServer(final String seacrh) =
-      _$OnGetDataFromServer;
+  const factory OnGetDataFromServer(
+      {required final String seacrh,
+      required final String sortBy}) = _$OnGetDataFromServer;
 
   @override
   String get seacrh;
+  @override
+  String get sortBy;
   @override
   @JsonKey(ignore: true)
   _$$OnGetDataFromServerCopyWith<_$OnGetDataFromServer> get copyWith =>

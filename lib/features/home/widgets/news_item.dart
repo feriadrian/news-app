@@ -15,6 +15,21 @@ class NewsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final double heightSize = MediaQuery.of(context).size.height;
 
+    Widget buildImageFormUrl() {
+      if (model.urlToImage != null) {
+        return Container(
+          width: double.infinity,
+          height: heightSize * 1 / 8,
+          decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+              image: DecorationImage(
+                  image: NetworkImage(model.urlToImage!), fit: BoxFit.fill)),
+        );
+      }
+      return SizedBox();
+    }
+
     DateTime dateTime = DateTime.parse(model.publishedAt);
     String formattedDate = DateFormat("dd MMMM yyyy").format(dateTime);
     return GestureDetector(
@@ -29,19 +44,7 @@ class NewsItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              model.urlToImage.isNotEmpty
-                  ? Container(
-                      width: double.infinity,
-                      height: heightSize * 1 / 8,
-                      decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(8),
-                              topRight: Radius.circular(8)),
-                          image: DecorationImage(
-                              image: NetworkImage(model.urlToImage),
-                              fit: BoxFit.fill)),
-                    )
-                  : const SizedBox(),
+              buildImageFormUrl(),
               Text(model.title),
               const SizedBox(
                 height: 4,

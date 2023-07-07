@@ -47,7 +47,7 @@ class NewsCard extends StatelessWidget {
               },
             );
           }
-          return const Text('Tidak ada Berita');
+          return const Center(child: Text('Tidak ada Berita'));
         }
         return const Center(child: Text('Belum ada data pencarian'));
       },

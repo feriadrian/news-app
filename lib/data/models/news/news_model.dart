@@ -12,7 +12,7 @@ class NewsModel with _$NewsModel {
     @Default('-') String title,
     @Default('-') String description,
     @Default('-') String url,
-    @Default('-') String urlToImage,
+    String? urlToImage,
     @Default('-') String publishedAt,
     @Default('-') String content,
     Source? source,

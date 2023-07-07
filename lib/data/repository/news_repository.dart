@@ -5,6 +5,7 @@ import 'package:news_app/core/error/failures.dart';
 import 'package:news_app/core/platfrom/network_info.dart';
 
 import 'package:news_app/data/models/news/news_model.dart';
+import 'package:news_app/domain/usecase/news_usacese/news_params.dart';
 
 import '../../domain/repository/news_repository/news_repository.dart';
 import '../datasources/news_remote_data_source.dart';
@@ -17,11 +18,10 @@ class NewsRepositoryImpl extends NewsRepository {
       {required this.newsRemoteDataSource, required this.newworkInfo});
   @override
   Future<Either<Failure, List<NewsModel>>> getNews(
-      {required String search, required int page}) async {
+      {required NewsParams params}) async {
     if (await newworkInfo.isConnected) {
       try {
-        final remoteNews =
-            await newsRemoteDataSource.getNews(search: search, page: page);
+        final remoteNews = await newsRemoteDataSource.getNews(params: params);
         return remoteNews;
       } on ServerException {
         return const Left(ServerFailure('terjadi Kesalahan pada server'));

@@ -9,11 +9,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final final GetNews getNews;
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => sl<HomeBloc>(),
+          create: (context) => serviceLocator<HomeBloc>(),
         ),
       ],
       child: const HomeView(),
